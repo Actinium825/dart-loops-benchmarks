@@ -1,16 +1,57 @@
-# Defines a default set of lint rules enforced for projects at Google. For
-# details and rationale, see
-# https://github.com/dart-lang/pedantic#enabled-lints.
+include: package:flutter_lints/flutter.yaml
 
-include: package:pedantic/analysis_options.yaml
+analyzer:
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+  exclude:
+    - "lib/utils/env.dart"
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+  errors:
+    invalid_annotation_target: ignore
 
-# For lint rules and documentation, see http://dart-lang.github.io/linter/lints.
-
-# Uncomment to specify additional rules.
-# linter:
-#   rules:
-#     - camel_case_types
-
-# analyzer:
-#   exclude:
-#     - path/to/excluded/files/**
+linter:
+  rules:
+    always_declare_return_types: true
+    avoid_final_parameters: true
+    avoid_multiple_declarations_per_line: true
+    avoid_redundant_argument_values: true
+    avoid_returning_this: true
+    avoid_types_on_closure_parameters: true
+    avoid_unused_constructor_parameters: true
+    cancel_subscriptions: true
+    depend_on_referenced_packages: false
+    eol_at_end_of_file: true
+    join_return_with_assignment: true
+    library_private_types_in_public_api: false
+    no_default_cases: true
+    one_member_abstracts: true
+    prefer_final_in_for_each: true
+    prefer_final_locals: true
+    prefer_if_elements_to_conditional_expressions: true
+    prefer_mixin: true
+    prefer_null_aware_method_calls: true
+    prefer_single_quotes: true
+    recursive_getters: true
+    secure_pubspec_urls: true
+    sized_box_shrink_expand: true
+    unnecessary_await_in_return: true
+    unnecessary_breaks: true
+    unnecessary_lambdas: true
+    unnecessary_late: true
+    unnecessary_parenthesis: true
+    unnecessary_to_list_in_spreads: true
+    use_colored_box: true
+    use_decorated_box: true
+    use_key_in_widget_constructors: false
+    use_late_for_private_fields_and_variables: true
+    use_named_constants: true
+    use_string_buffers: true
+    use_super_parameters: true
+    prefer_const_constructors: true
+    prefer_const_declarations: true
+    prefer_const_literals_to_create_immutables: true
+    omit_obvious_property_types: true
+    strict_top_level_inference: true
