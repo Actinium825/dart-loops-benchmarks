@@ -3,11 +3,11 @@ import 'dart:math';
 import 'package:benchmark_harness/benchmark_harness.dart';
 
 // Create a new benchmark by extending BenchmarkBase
-class TemplateBenchmarkWhileUncached extends BenchmarkBase {
-  TemplateBenchmarkWhileUncached() : super('Template');
+class BenchmarkWhileUncached extends BenchmarkBase {
+  BenchmarkWhileUncached() : super('');
   final List<int> list = List.generate(3000000, (i) => i);
   static void main() {
-    TemplateBenchmarkWhileUncached().report();
+    BenchmarkWhileUncached().report();
   }
 
   // The benchmark code.
@@ -22,11 +22,11 @@ class TemplateBenchmarkWhileUncached extends BenchmarkBase {
   }
 }
 
-class TemplateBenchmarkWhileCached extends BenchmarkBase {
-  TemplateBenchmarkWhileCached() : super('Template');
+class BenchmarkWhileCached extends BenchmarkBase {
+  BenchmarkWhileCached() : super('');
   final List<int> list = List.generate(3000000, (i) => i);
   static void main() {
-    TemplateBenchmarkWhileCached().report();
+    BenchmarkWhileCached().report();
   }
 
   // The benchmark code.
@@ -42,11 +42,11 @@ class TemplateBenchmarkWhileCached extends BenchmarkBase {
   }
 }
 
-class TemplateBenchmarkWhileReversed extends BenchmarkBase {
-  TemplateBenchmarkWhileReversed() : super('Template');
+class BenchmarkWhileReversed extends BenchmarkBase {
+  BenchmarkWhileReversed() : super('');
   final List<int> list = List.generate(3000000, (i) => i);
   static void main() {
-    TemplateBenchmarkWhileReversed().report();
+    BenchmarkWhileReversed().report();
   }
 
   // The benchmark code.
@@ -61,11 +61,11 @@ class TemplateBenchmarkWhileReversed extends BenchmarkBase {
   }
 }
 
-class TemplateBenchmarkForUncached extends BenchmarkBase {
-  TemplateBenchmarkForUncached() : super('Template');
+class BenchmarkForUncached extends BenchmarkBase {
+  BenchmarkForUncached() : super('');
   final List<int> list = List.generate(3000000, (i) => i);
   static void main() {
-    TemplateBenchmarkForUncached().report();
+    BenchmarkForUncached().report();
   }
 
   // The benchmark code.
@@ -78,11 +78,11 @@ class TemplateBenchmarkForUncached extends BenchmarkBase {
   }
 }
 
-class TemplateBenchmarkForCached extends BenchmarkBase {
-  TemplateBenchmarkForCached() : super('Template');
+class BenchmarkForCached extends BenchmarkBase {
+  BenchmarkForCached() : super('');
   final List<int> list = List.generate(3000000, (i) => i);
   static void main() {
-    TemplateBenchmarkForCached().report();
+    BenchmarkForCached().report();
   }
 
   // The benchmark code.
@@ -96,11 +96,11 @@ class TemplateBenchmarkForCached extends BenchmarkBase {
   }
 }
 
-class TemplateBenchmarkForReversed extends BenchmarkBase {
-  TemplateBenchmarkForReversed() : super('Template');
+class BenchmarkForReversed extends BenchmarkBase {
+  BenchmarkForReversed() : super('');
   final List<int> list = List.generate(3000000, (i) => i);
   static void main() {
-    TemplateBenchmarkForReversed().report();
+    BenchmarkForReversed().report();
   }
 
   // The benchmark code.
@@ -113,11 +113,11 @@ class TemplateBenchmarkForReversed extends BenchmarkBase {
   }
 }
 
-class TemplateBenchmarkForIn extends BenchmarkBase {
-  TemplateBenchmarkForIn() : super('Template');
+class BenchmarkForIn extends BenchmarkBase {
+  BenchmarkForIn() : super('');
   final List<int> list = List.generate(3000000, (i) => i);
   static void main() {
-    TemplateBenchmarkForIn().report();
+    BenchmarkForIn().report();
   }
 
   // The benchmark code.
@@ -130,11 +130,11 @@ class TemplateBenchmarkForIn extends BenchmarkBase {
   }
 }
 
-class TemplateBenchmarkForEach extends BenchmarkBase {
-  TemplateBenchmarkForEach() : super('Template');
+class BenchmarkForEach extends BenchmarkBase {
+  BenchmarkForEach() : super('');
   final List<int> list = List.generate(3000000, (i) => i);
   static void main() {
-    TemplateBenchmarkForEach().report();
+    BenchmarkForEach().report();
   }
 
   // The benchmark code.
@@ -147,11 +147,11 @@ class TemplateBenchmarkForEach extends BenchmarkBase {
   }
 }
 
-class TemplateBenchmarkMap extends BenchmarkBase {
-  TemplateBenchmarkMap() : super('Template');
+class BenchmarkMap extends BenchmarkBase {
+  BenchmarkMap() : super('');
   final List<int> list = List.generate(3000000, (i) => i);
   static void main() {
-    TemplateBenchmarkMap().report();
+    BenchmarkMap().report();
   }
 
   // The benchmark code.
@@ -166,21 +166,21 @@ class TemplateBenchmarkMap extends BenchmarkBase {
 
 void main(List<String> arguments) {
   print('while uncached');
-  TemplateBenchmarkWhileUncached.main();
+  BenchmarkWhileUncached.main();
   print('while cached');
-  TemplateBenchmarkWhileCached.main();
+  BenchmarkWhileCached.main();
   print('while reversed');
-  TemplateBenchmarkWhileReversed.main();
+  BenchmarkWhileReversed.main();
   print('for uncached');
-  TemplateBenchmarkForUncached.main();
+  BenchmarkForUncached.main();
   print('for cached');
-  TemplateBenchmarkForCached.main();
+  BenchmarkForCached.main();
   print('for reversed');
-  TemplateBenchmarkForReversed.main();
+  BenchmarkForReversed.main();
   print('for...in');
-  TemplateBenchmarkForIn.main();
+  BenchmarkForIn.main();
   print('forEach');
-  TemplateBenchmarkForEach.main();
+  BenchmarkForEach.main();
   print('map');
-  TemplateBenchmarkMap.main();
+  BenchmarkMap.main();
 }
