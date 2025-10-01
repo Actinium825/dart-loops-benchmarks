@@ -10,18 +10,18 @@ void _parseCharacter() {
   Character.fromJson(jsonData as Map<String, dynamic>);
 }
 
-// Create a new benchmark by extending BenchmarkBase
 class BenchmarkWhileUncached extends BenchmarkBase {
   BenchmarkWhileUncached() : super('');
-  final List<int> list = List.generate(200, (i) => i);
+
+  final list = List.generate(200, (i) => i);
+
   static void main() {
     BenchmarkWhileUncached().report();
   }
 
-  // The benchmark code.
   @override
   void run() async {
-    var count = 0;
+    int count = 0;
     while (count < list.length) {
       _parseCharacter();
       count++;
@@ -31,16 +31,17 @@ class BenchmarkWhileUncached extends BenchmarkBase {
 
 class BenchmarkWhileCached extends BenchmarkBase {
   BenchmarkWhileCached() : super('');
-  final List<int> list = List.generate(200, (i) => i);
+
+  final list = List.generate(200, (i) => i);
+
   static void main() {
     BenchmarkWhileCached().report();
   }
 
-  // The benchmark code.
   @override
   void run() {
-    var count = 0;
-    var length = list.length;
+    int count = 0;
+    final length = list.length;
     while (count < length) {
       _parseCharacter();
       count++;
@@ -50,16 +51,16 @@ class BenchmarkWhileCached extends BenchmarkBase {
 
 class BenchmarkWhileReversed extends BenchmarkBase {
   BenchmarkWhileReversed() : super('');
-  final List<int> list = List.generate(200, (i) => i);
+
+  final list = List.generate(200, (i) => i);
+
   static void main() {
     BenchmarkWhileReversed().report();
   }
 
-  // The benchmark code.
   @override
   void run() {
-    var count = list.length - 1;
-    num eachElement = 0;
+    int count = list.length - 1;
     while (count >= 0) {
       _parseCharacter();
       count--;
@@ -69,15 +70,16 @@ class BenchmarkWhileReversed extends BenchmarkBase {
 
 class BenchmarkForUncached extends BenchmarkBase {
   BenchmarkForUncached() : super('');
-  final List<int> list = List.generate(200, (i) => i);
+
+  final list = List.generate(200, (i) => i);
+
   static void main() {
     BenchmarkForUncached().report();
   }
 
-  // The benchmark code.
   @override
   void run() {
-    for (var i = 0; i < list.length; i++) {
+    for (int i = 0; i < list.length; i++) {
       _parseCharacter();
     }
   }
@@ -85,16 +87,17 @@ class BenchmarkForUncached extends BenchmarkBase {
 
 class BenchmarkForCached extends BenchmarkBase {
   BenchmarkForCached() : super('');
-  final List<int> list = List.generate(200, (i) => i);
+
+  final list = List.generate(200, (i) => i);
+
   static void main() {
     BenchmarkForCached().report();
   }
 
-  // The benchmark code.
   @override
   void run() {
-    var length = list.length;
-    for (var i = 0; i < length; i++) {
+    final length = list.length;
+    for (int i = 0; i < length; i++) {
       _parseCharacter();
     }
   }
@@ -102,16 +105,16 @@ class BenchmarkForCached extends BenchmarkBase {
 
 class BenchmarkForReversed extends BenchmarkBase {
   BenchmarkForReversed() : super('');
-  final List<int> list = List.generate(200, (i) => i);
+
+  final list = List.generate(200, (i) => i);
+
   static void main() {
     BenchmarkForReversed().report();
   }
 
-  // The benchmark code.
   @override
   void run() {
-    num eachElement = 0;
-    for (var i = list.length - 1; i >= 0; i--) {
+    for (int i = list.length - 1; i >= 0; i--) {
       _parseCharacter();
     }
   }
@@ -119,15 +122,16 @@ class BenchmarkForReversed extends BenchmarkBase {
 
 class BenchmarkForIn extends BenchmarkBase {
   BenchmarkForIn() : super('');
-  final List<int> list = List.generate(200, (i) => i);
+
+  final list = List.generate(200, (i) => i);
+
   static void main() {
     BenchmarkForIn().report();
   }
 
-  // The benchmark code.
   @override
   void run() {
-    for (var element in list) {
+    for (final _ in list) {
       _parseCharacter();
     }
   }
@@ -135,15 +139,16 @@ class BenchmarkForIn extends BenchmarkBase {
 
 class BenchmarkForEach extends BenchmarkBase {
   BenchmarkForEach() : super('');
-  final List<int> list = List.generate(200, (i) => i);
+
+  final list = List.generate(200, (i) => i);
+
   static void main() {
     BenchmarkForEach().report();
   }
 
-  // The benchmark code.
   @override
   void run() {
-    list.forEach((element) {
+    list.forEach((_) {
       _parseCharacter();
     });
   }
@@ -151,15 +156,16 @@ class BenchmarkForEach extends BenchmarkBase {
 
 class BenchmarkMap extends BenchmarkBase {
   BenchmarkMap() : super('');
-  final List<int> list = List.generate(200, (i) => i);
+
+  final list = List.generate(200, (i) => i);
+
   static void main() {
     BenchmarkMap().report();
   }
 
-  // The benchmark code.
   @override
   void run() {
-    list.map((e) {
+    list.map((_) {
       _parseCharacter();
     }).toList();
   }
