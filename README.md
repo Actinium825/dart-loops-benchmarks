@@ -20,7 +20,7 @@ model under with multiple properties of types `String`, `List<String>`, enums, `
 2. I added a json example [`Simon Riley`](https://github.com/Actinium825/dart-loops-benchmarks/blob/main/model/simon_riley.dart) 
 to be used with `jsonDecode` and finally parse the json result
 3. I [duplicated](https://github.com/Actinium825/dart-loops-benchmarks/blob/main/benchmark/parse_benchmarks.dart) 
-the existing `benchmarks.dart` for parsing, replacing the `pow` with json decoding and parsing
+the existing `benchmarks.dart`, replacing the `pow` with json decoding and parsing
 4. Finally, I updated the number of loops to `100`, `200`, and `500` and run the tests for 10 times
 
 ## Results
